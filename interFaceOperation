@@ -1,0 +1,51 @@
+package collection;
+import java.util.ArrayList;
+import java.util.Collection;
+
+
+public class interfaceOperation {
+
+	public static void main(String[] args) {
+	Collection<Integer>A=new ArrayList<>();
+	A.add(10);
+	A.add(20);
+	A.add(30);
+	System.out.println("after add():"+A);
+	
+	int s=A.size();
+	System.out.println("the size of A"+s);
+	
+	System.out.println("A contains(20) "+A.contains(20));
+	
+	Collection<Integer>B=new ArrayList<>();
+	B.add(30);
+	B.add(50);
+	A.addAll(B);
+	System.out.println("after A.addAll(B)\n:"+A);
+	System.out.println("contains all :"+A.containsAll(B));
+	A.remove(50);
+	System.out.println("after remove 50:  "+A);
+	A.removeAll(B);
+	System.out.println("after remove all: "+A);
+	
+	Collection<Integer>C=new ArrayList<>();
+	C.add(20);
+	C.add(40);
+	A.retainAll(C);
+	System.out.println("After retainAll(): "+A);
+	System.out.println("After  Is Empty"+A.isEmpty());
+	A.clear();
+	System.out.println("After clear: "+A);
+	A.isEmpty();
+	System.out.println("is empty after clear:"+A);
+	
+	
+	
+	
+	
+	
+		
+
+	}
+
+}
