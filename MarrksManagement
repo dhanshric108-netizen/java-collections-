@@ -1,0 +1,43 @@
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Iterator;
+
+public class StudentMarks
+{
+    public static void main(String[] args)
+    {
+        ArrayList<Integer> marks = new ArrayList<>();
+
+        marks.add(75);
+        marks.add(92);
+        marks.add(68);
+        marks.add(85);
+        marks.add(90);
+
+        System.out.println("Original Marks: " + marks);
+
+        System.out.println("Marks using Iterator:");
+
+        Iterator<Integer> itr = marks.iterator();
+
+        while(itr.hasNext())
+        {
+            int mark = itr.next();
+
+            if(mark < 70)
+            {
+                itr.remove();
+            }
+        }
+
+        System.out.println("After removing marks below 70: " + marks);
+
+        Collections.sort(marks);
+
+        System.out.println("Sorted Marks: " + marks);
+
+        System.out.println("Highest Marks: " + marks.get(marks.size() - 1));
+
+        System.out.println("Lowest Marks: " + marks.get(0));
+    }
+}
