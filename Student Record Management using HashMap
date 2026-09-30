@@ -1,0 +1,53 @@
+import java.util.HashMap;
+import java.util.Scanner;
+
+public class StudentRecord
+{
+    public static void main(String[] args)
+    {
+        HashMap<Integer, String> students = new HashMap<>();
+
+        Scanner sc = new Scanner(System.in);
+
+        students.put(101, "Dhanashree");
+        students.put(102, "Priya");
+        students.put(103, "Sneha");
+        students.put(104, "Riya");
+
+        System.out.println("Student Records: " + students);
+
+        System.out.print("Enter Roll Number to search: ");
+        int roll = sc.nextInt();
+
+        if(students.containsKey(roll))
+        {
+            System.out.println("Student Name: " + students.get(roll));
+        }
+        else
+        {
+            System.out.println("Student not found");
+        }
+
+        System.out.print("Enter Roll Number to update: ");
+        int updateRoll = sc.nextInt();
+
+        if(students.containsKey(updateRoll))
+        {
+            System.out.print("Enter New Name: ");
+            String name = sc.next();
+
+            students.put(updateRoll, name);
+
+            System.out.println("Record Updated Successfully");
+        }
+
+        System.out.print("Enter Roll Number to remove: ");
+        int removeRoll = sc.nextInt();
+
+        students.remove(removeRoll);
+
+        System.out.println("Final Student Records: " + students);
+
+        sc.close();
+    }
+}
